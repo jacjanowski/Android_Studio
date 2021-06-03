@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -34,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void findViews(){
+    private void findViews() {
         resultText = findViewById(R.id.text_view_result);
-        resultText.setText("Woohoooo, I updated resultText from MainActivity.java!");
         maleButton = findViewById(R.id.radio_button_male);
         femaleButton = findViewById(R.id.radio_button_female);
         ageEditText = findViewById(R.id.edit_text_age);
@@ -51,20 +51,49 @@ public class MainActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculateBmi();
+                double bmiResult = calculateBmi();
+
+                String ageText = ageEditText.getText().toString();
+                int age = Integer.parseInt(ageText);
+
+                if (age >= 18){
+                    displayResult(bmiResult);
+                } else {
+                    displayGuidance(bmiResult);
+                }
 
             }
         });
     }
 
-    private void calculateBmi() {
-        String ageText = ageEditText.getText().toString();
+    private void displayGuidance(double bmi) {
+        DecimalFormat myDecimalFormat = new DecimalFormat("0.00");
+        String bmiTextResult = myDecimalFormat.format(bmi);
+
+        String fullResultString;
+        if (maleButton.isChecked()){
+            //If male button is checked, display boy guidance
+            fullResultString = bmiTextResult + " - As you are under 18, please consult with your doctor for a healthy range for boys.";
+        } else if(femaleButton.isChecked()){
+            //If female is checked, display girl guidance
+            fullResultString = bmiTextResult + " - As you are under 18, please consult with your doctor for a healthy range for girls.";
+
+        } else {
+            //Display general guidance
+            fullResultString = bmiTextResult + " - As you are under 18, please consult with your doctor for a healthy range.";
+        }
+        resultText.setText(fullResultString);
+    }
+
+
+    private double calculateBmi() {
+
         String feetText = feetEditText.getText().toString();
         String inchesText = inchesEditText.getText().toString();
         String weightText = weightEditText.getText().toString();
 
         //Converting the number 'String' into 'int' variables.
-        int age = Integer.parseInt(ageText);
+
         int feet = Integer.parseInt(feetText);
         int inches = Integer.parseInt(inchesText);
         int weight = Integer.parseInt(weightText);
@@ -73,10 +102,25 @@ public class MainActivity extends AppCompatActivity {
 
         double heightInMeters = totalInches * 0.0254;
 
-        double bmi = weight / (heightInMeters * heightInMeters);
+        return weight / (heightInMeters * heightInMeters);
 
-        String bmiTextResult = String.valueOf(bmi);
+    }
 
-        resultText.setText(bmiTextResult);
+    private void displayResult(double bmi) {
+        DecimalFormat myDecimalFormat = new DecimalFormat("0.00");
+        String bmiTextResult = myDecimalFormat.format(bmi);
+
+        String fullResultString;
+        if (bmi < 18.5) {
+            //Display underweight
+            fullResultString = bmiTextResult + " - You are underweight.";
+        } else if (bmi > 25) {
+            //Display overweight
+            fullResultString = bmiTextResult + " - You are overweight.";
+        } else {
+            //healthy
+            fullResultString = bmiTextResult + " - You are healthy!";
+        }
+        resultText.setText(fullResultString);
     }
 }
