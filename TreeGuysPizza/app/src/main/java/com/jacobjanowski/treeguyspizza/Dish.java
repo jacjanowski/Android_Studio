@@ -11,4 +11,9 @@ public class Dish {
         this.description = description;
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }

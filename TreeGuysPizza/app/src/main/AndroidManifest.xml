@@ -13,6 +13,10 @@
             android:name=".StarterActivity"
             android:label="Starters"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainCoursesActivity"
+            android:label="Main Courses"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

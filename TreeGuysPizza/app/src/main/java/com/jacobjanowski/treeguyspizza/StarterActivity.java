@@ -15,35 +15,25 @@ public class StarterActivity extends AppCompatActivity {
 
         ListView startersList = findViewById(R.id.list_view_starters);
 
-        Dish dish1 = new Dish("Mushroom and tofu maki","Toasted seaweed wrapped around sushi rice, filled with chestnut mushroom and smoked tofu", 999);
 //        dish1.title = "Mushroom and tofu maki";
 //        dish1.description = "Toasted seaweed wrapped around sushi rice, filled with chestnut mushroom and smoked tofu";
 //        dish1.price = 999;
 
-        String[] dishes = {
-                "Mushroom and tofu maki",
-                "Egg and avocado uramaki",
-                "Melon and lemon soup",
-                "Coconut and chocolate mousse",
-                "Spinach and cabbage wontons",
-                "Broccoli and cucumber soup",
-                "Chilli and aubergine dip",
-                "Chickpea and chilli gyoza",
-                "Sprout and pineapple soup",
-                "Egusi and borscht soup",
-                "Aubergine and egg sushi",
-                "Artichoke and mustard soup",
-                "Peppercorn and tamarind soup",
-                "Parsley and celeriac parcels",
-                "Pasta and broccoli soup",
-                "Potato and courgette soup",
-                "Chickpea and cabbage parcels",
-                "Coriander and peppercorn gyoza",
-                "Pear and chestnut soup",
-                "Pesto and garam masala parcels"
+        Dish[] dishes = {
+
+                new Dish("Mushroom and tofu maki", "Toasted seaweed wrapped around sushi rice, filled with chestnut mushroom and smoked tofu", 999),
+                new Dish("Farfelle with Vodka sauce", "Creamy and rich in California taste", 699),
+                new Dish("Sauce puree with Brussels", "Woodland taste", 1299),
+                new Dish("Turkey breast", "Gyoza enriched", 199),
+                new Dish("Brocolli cheddar", "Cereal", 599),
+                new Dish("Sensei sushi", "Fenua paste", 799),
+                new Dish("Steak", "pasztet", 1789),
+                new Dish("Barbosa beans", "Woodfired brick", 1329),
+                new Dish("Breaded Chicken", "Blessed oil", 1559)
         };
 
-        ArrayAdapter<String> dishesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dishes);
+
+        ArrayAdapter<Dish> dishesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dishes);
 
         startersList.setAdapter(dishesAdapter);
 
