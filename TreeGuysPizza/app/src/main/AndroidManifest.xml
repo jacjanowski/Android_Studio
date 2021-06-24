@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".DessertsActivity"
+            android:label="Desserts"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
             android:name=".StarterActivity"
             android:label="Starters"
             android:parentActivityName=".MainActivity" />
