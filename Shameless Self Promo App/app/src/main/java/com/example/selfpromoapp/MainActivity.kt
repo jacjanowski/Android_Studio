@@ -1,12 +1,10 @@
 package com.example.selfpromoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         button_preview.setOnClickListener {
             onPreviewClicked()
         }
+
+        val spinnerValues = arrayOf("Android Developer", "Android Engineer")
+        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,spinnerValues)
+        spinner_job_title.adapter = spinnerAdapter
     }
 
     private fun onPreviewClicked() {
@@ -35,10 +37,22 @@ class MainActivity : AppCompatActivity() {
         val startDate = edit_text_start_date.text.toString()
 
 
-        val testString = "Contact Name: $contactName, Contact Number: $contactNumber, My Display Name: $myDisplayName, Include Junior: $includeJunior, Job Title: $jobTitle, Immediate Start: $immediateStart, Start Date: $startDate"
+//        val testString = "Contact Name: $contactName, Contact Number: $contactNumber, My Display Name: $myDisplayName, Include Junior: $includeJunior, Job Title: $jobTitle, Immediate Start: $immediateStart, Start Date: $startDate"
+//
+//        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
 
-        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+        val previewActivityIntent = Intent(this,PreviewActivity::class.java)
+        previewActivityIntent.putExtra("Contact Name", contactName)
+        previewActivityIntent.putExtra("Contact Number", contactNumber)
+        previewActivityIntent.putExtra("My Display Name", myDisplayName)
+        previewActivityIntent.putExtra("Include Junior", includeJunior)
+        previewActivityIntent.putExtra("Job Title", jobTitle)
+        previewActivityIntent.putExtra("Immediate Start", immediateStart)
+        previewActivityIntent.putExtra("Start Date", startDate)
 
+
+
+        startActivity(previewActivityIntent)
 
     }
 }
