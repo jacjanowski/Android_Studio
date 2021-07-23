@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Registration Form App</string>
+    <string name="activity_main_register">Register</string>
+    <string name="activity_first_name">First Name</string>
+    <string name="activity_last_name">Last Name</string>
+    <string name="activity_email">Email</string>
+    <string name="activity_phone_number">Phone Number</string>
+    <string name="activity_password">Password</string>
+    <string name="activity_create_account_button">Create Account</string>
+    <string name="activity_account_summary">Your Account Details</string>
+</resources>
