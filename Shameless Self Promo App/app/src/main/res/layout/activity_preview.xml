@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="48dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="48dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#F8F2BA"
         app:cardCornerRadius="6dp"
-        app:cardBackgroundColor="#F8F2BA">
+        app:cardUseCompatPadding="true">
 
         <TextView
             android:id="@+id/text_view_message"
             android:layout_width="match_parent"
-            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:fontFamily="sans-serif-condensed-light"
             android:textColor="#212121"
-            android:layout_margin="12dp"
-            android:layout_height="wrap_content"
+            android:textSize="18sp"
             tools:text="Im making this very long so you are able to read it on many lines ...idk what else i need to tell you ." />
 
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/button_send_message"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_marginTop="24dp"
-        android:text="Send Message" />
+        android:text="@string/button_send_message" />
 
 </LinearLayout>
