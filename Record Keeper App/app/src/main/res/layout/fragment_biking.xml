@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/running_image_description"
                 android:scaleType="centerCrop"
-                android:src="@drawable/running" />
+                android:src="@drawable/biking" />
 
             <View
                 android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:text="@string/running"
+                android:text="@string/biking"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
@@ -57,24 +57,24 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_5km"
+                android:id="@+id/container_longest_ride"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp">
 
                 <TextView
-                    android:id="@+id/text_view_5km_heading"
+                    android:id="@+id/text_view_longest_ride"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="@string/_5km"
+                    android:text="@string/longest_ride"
                     android:textColor="?attr/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/text_view_5k_value"
+                    android:id="@+id/text_view_longest_ride_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -91,7 +91,7 @@
                     android:fontFamily="sans-serif-light"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_5k_value"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_longest_ride_value"
                     tools:text="11/18/2019" />
 
 
@@ -105,25 +105,25 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_10km"
+                android:id="@+id/container_biggest_climb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="12dp">
 
                 <TextView
-                    android:id="@+id/text_view_10km_heading"
+                    android:id="@+id/text_view_biggest_climb_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="@string/_10km"
+                    android:text="@string/biggest_climb"
                     android:textColor="?attr/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/text_view_10k_value"
+                    android:id="@+id/text_view_biggest_climb_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -140,7 +140,7 @@
                     android:fontFamily="sans-serif-light"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_10k_value"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_biggest_climb_value"
                     tools:text="11/18/2019" />
 
 
@@ -153,25 +153,25 @@
                 android:background="@color/light_gray" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_half_marathon"
+                android:id="@+id/container_best_speed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="12dp">
 
                 <TextView
-                    android:id="@+id/text_view_half_marathon"
+                    android:id="@+id/text_view_best_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="@string/half_marathon"
+                    android:text="@string/best_speed"
                     android:textColor="?attr/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/text_view_half_marathon_value"
+                    android:id="@+id/text_view_best_speed_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -188,59 +188,13 @@
                     android:fontFamily="sans-serif-light"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_half_marathon_value"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_best_speed_value"
                     tools:text="11/18/2019" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/light_gray" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_marathon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:padding="12dp">
-
-                <TextView
-                    android:id="@+id/text_view_marathon_heading"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/marathon"
-                    android:textColor="?attr/colorPrimary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/text_view_marathon_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/dark_gray"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="22:04" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_marathon_value"
-                    tools:text="11/18/2019" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>
